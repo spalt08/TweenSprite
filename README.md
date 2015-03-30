@@ -20,5 +20,5 @@ With TimelineMax
 // make a timeline
 var tl = new TimelineMax();
 tl.to(domElement, 1.0, { left: "-=100px" }); // some timeline stuff
-tl.add( sequence( domElement, sequenceList, sequenceTime) ); // adding sequence inside timeline
+tl.add( sequence( domElement, sequenceList, sequenceTime) ); // adding sequence
 ```
