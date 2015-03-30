@@ -12,7 +12,9 @@ var domElement = document.getElementById("img_id");
 var sequenceTime = 1.5;
 
 // perform the animation
-sequence( domElement, sequenceList, sequenceTime );
+sequence( domElement, sequenceList, sequenceTime, {delay: 1.0} );
+// the last one is a Tweenmax parameters for the animation
+// example: { delay: 1.0, repeat: -1, onStart: function, etc.. }
 ```
 
 With TimelineMax
