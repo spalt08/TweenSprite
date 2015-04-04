@@ -13,7 +13,7 @@ var domElement = document.getElementById("img_id");
 var sequenceTime = 1.5;
 
 // perform the animation
-sequence( domElement, sequenceList, sequenceTime, {delay: 1.0} );
+TweenMax.sequence( domElement, sequenceList, sequenceTime, {delay: 1.0} );
 // the last one is a Tweenmax parameters for the animation
 // example: { delay: 1.0, repeat: -1, onStart: function, etc.. }
 ```
@@ -23,7 +23,7 @@ With TimelineMax
 // make a timeline
 var tl = new TimelineMax();
 tl.to(domElement, 1.0, { left: "-=100px" }); // some timeline stuff
-tl.add( sequence( domElement, sequenceList, sequenceTime) ); // adding sequence
+tl.add( TweenMax.sequence( domElement, sequenceList, sequenceTime) ); // adding sequence
 ```
 
 ## Sprite Sheets
