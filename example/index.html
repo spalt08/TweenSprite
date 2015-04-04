@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>TweenSprite.js - Examples</title>
+
+        <link type="text/css" href="./css/style.css" rel="stylesheet" media="all" />
+
+		<script type="text/javascript" src="http://codephobos.com/js/gs/TweenMax.min.js"></script>
+		<script type="text/javascript" src="./../src/TweenSprite.js"></script>
+	</head>
+	<body>
+		<div class="align">
+			<h1>TweenSprite<span>.js</span></h1>
+			<div class="sub-title">Simple sprite animation plugin for TweenMax.js</div>
+
+			<div>Sequence animation (need some time to load)</div>
+			<pre>TweenMax.sequence( domElement, sequenceList, 1.0, { delay: 0.5, repeat: -1 } );</pre>
+			<div class="exapmle-container">
+				<img src="./images/Bird_clouds_00000.png" id="drone" style="position: relative; left: 0;" />
+			</div>
+
+			<div>Sprite Sheet animation by steps</div>
+<pre>TweenMax.spriteSheet( domElement, { 
+	width: 818, 
+	offsetX: 0,
+	offsetY: 0,
+	stepX: 201, 
+	stepY: 154, 
+	count: 11
+}, 0.5, { delay: 0.1, repeat: -1 });</pre>
+			<div class="exapmle-container" id="spritesheet" style="width: 210px; height: 160px; background-image: url(./images/drummer.png);"></div>
+
+			<div>Sprite Sheet animation by data</div>
+<pre>TweenMax.spriteSheet( domElement, { original: ["85px", "119px"], data: [
+	/* x, y, width, height */
+	[0, 		0, 		"85px", 	"119px"],
+	["92px", 	0, 		"86px", 	"119px"],
+	["188px", 	0, 		"86px", 	"119px"],
+	["283px", 	0, 		"85px", 	"119px"],
+	["378px", 	0, 		"85px",		"119px"],
+	["475px", 	0,		"86px", 	"119px"],
+	["0px", 	"128px",	"84px", 	"116px"],
+	["93px", 	"128px",	"91px", 	"116px"],
+	["205px", 	"128px",	"99px", 	"116px"],
+	["310px", 	"128px",	"90px", 	"116px"],
+	["406px", 	"128px",	"85px", 	"116px"],
+	["497px", 	"128px",	"85px", 	"116px"],
+	["584px", 	"128px",	"85px", 	"116px"],
+	["672px", 	"128px",	"98px", 	"116px"],
+	["775px", 	"128px",	"89px", 	"116px"],
+]}, 1.5, { delay: 0.1, repeat: -1 });
+</pre>
+
+			<div class="exapmle-container" id="spritesheet2" style="width: 85px; height: 119px; background-image: url(./images/sonic.png);"></div>
+		</div>
+
+		<script type="text/javascript">
+			/* SEQUENCE */
+			var domElement = document.getElementById("drone");
+			var sequenceList = [];
+			for(var i = 0; i < 24; i++) sequenceList.push( "./images/Bird_clouds_000" + (i < 10 ? "0"+i : i) + ".png" );
+			for(var i = 23; i >= 0; i--) sequenceList.push( "./images/Bird_clouds_000" + (i < 10 ? "0"+i : i) + ".png" );
+
+			TweenMax.sequence( domElement, sequenceList, 2.0, { delay: 0.5, repeat: -1 });
+			TweenMax.to( domElement, 2.0, { left: "+=30em", delay: 0.5, repeat: -1, ease: Linear.easeNone });
+
+			/* SPRITESHEET */
+			var domElement = document.getElementById("spritesheet");
+			TweenMax.spriteSheet( domElement, { 
+				width: 818, 
+				offsetX: 0,
+				offsetY: 2,
+				stepX: 201, 
+				stepY: 154, 
+				count: 12
+			}, 0.5, { delay: 0.1, repeat: -1 });
+
+			/* SPRITESHEET2 */
+			var domElement = document.getElementById("spritesheet2");
+			TweenMax.spriteSheet( domElement, { original: ["85px", "119px"], data: [
+				/* x, y, width, height */
+				[0, 		0, 			"85px", 	"119px"],
+				["92px", 	0, 			"86px", 	"119px"],
+				["188px", 	0, 			"86px", 	"119px"],
+				["283px", 	0, 			"85px", 	"119px"],
+				["378px", 	0, 			"85px",		"119px"],
+				["475px", 	0,			"86px", 	"119px"],
+				[0, 		0, 			"85px", 	"119px"],
+				["92px", 	0, 			"86px", 	"119px"],
+				["188px", 	0, 			"86px", 	"119px"],
+				["283px", 	0, 			"85px", 	"119px"],
+				["378px", 	0, 			"85px",		"119px"],
+				["475px", 	0,			"86px", 	"119px"],
+				["0px", 	"128px",	"84px", 	"116px"],
+				["93px", 	"128px",	"91px", 	"116px"],
+				["205px", 	"128px",	"99px", 	"116px"],
+				["310px", 	"128px",	"90px", 	"116px"],
+				["406px", 	"128px",	"85px", 	"116px"],
+				["497px", 	"128px",	"85px", 	"116px"],
+				["584px", 	"128px",	"85px", 	"116px"],
+				["672px", 	"128px",	"98px", 	"116px"],
+				["775px", 	"128px",	"89px", 	"116px"],
+				["0px", 	"256px",	"80px", 	"116px"],
+				["92px", 	"256px",	"91px", 	"116px"],
+				["197px", 	"258px",	"100px", 	"113px"],
+				["311px", 	"255px",	"91px", 	"116px"],
+				["415px", 	"255px",	"81px", 	"116px"],
+				["517px", 	"255px",	"81px", 	"116px"],
+				["608px", 	"255px",	"81px", 	"116px"],
+				["705px", 	"255px",	"100px", 	"113px"],
+				["810px", 	"255px",	"90px", 	"113px"] ,
+				["0px", 	"256px",	"80px", 	"116px"],
+				["92px", 	"256px",	"91px", 	"116px"],
+				["197px", 	"258px",	"100px", 	"113px"],
+				["311px", 	"255px",	"91px", 	"116px"],
+				["415px", 	"255px",	"81px", 	"116px"],
+				["517px", 	"255px",	"81px", 	"116px"],
+				["608px", 	"255px",	"81px", 	"116px"],
+				["705px", 	"255px",	"100px", 	"113px"],
+				["810px", 	"255px",	"90px", 	"113px"] ,
+				["0px", 	"256px",	"80px", 	"116px"],
+				["92px", 	"256px",	"91px", 	"116px"],
+				["197px", 	"258px",	"100px", 	"113px"],
+				["311px", 	"255px",	"91px", 	"116px"],
+				["415px", 	"255px",	"81px", 	"116px"],
+				["517px", 	"255px",	"81px", 	"116px"],
+				["608px", 	"255px",	"81px", 	"116px"],
+				["705px", 	"255px",	"100px", 	"113px"],
+				["810px", 	"255px",	"90px", 	"113px"] 
+			]}, 3.0, { delay: 0.1, repeat: -1 });
+		</script>
+	</body>
+</html>

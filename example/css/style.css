@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
+
+body { margin: 0; padding: 0; font-family: 'Open Sans'; }
+h1 { font-weight: 300; }
+h1 span { color: #ff0000; }
+
+.align { width: 60em; margin: 0 auto; padding: 5em 1em; }
+
+.sub-title { margin-top: -1.5em; margin-bottom: 2em; font-size: 0.9em; color: #aaa; font-weight: 300; }
+.exapmle-container { margin: 1em 0; }
+
+pre { padding: 16px; overflow: auto; font-size: 100%; line-height: 1.45; background-color: #f7f7f7; border-radius: 3px; }
