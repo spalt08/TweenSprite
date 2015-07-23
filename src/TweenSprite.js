@@ -42,8 +42,7 @@ TweenMax.spriteSheet = function( domElement, spritesheet, time, params ){
             var counter = Math.ceil(_TweenSpriteCounters[counterID].counter);
 
             if ( counter < spritesheet.count) {
-                domElement.style.backgroundPositionX = "-" + spritesheet.data[counter][0];
-                domElement.style.backgroundPositionY = "-" + spritesheet.data[counter][1];
+                domElement.style.backgroundPosition = "-" + spritesheet.data[counter][0] +  " -" + spritesheet.data[counter][1];
                 domElement.style.width = spritesheet.data[counter][2];
                 domElement.style.height = spritesheet.data[counter][3];
 
@@ -80,10 +79,12 @@ TweenMax.spriteSheet = function( domElement, spritesheet, time, params ){
             if ( _TweenSpriteCounters[counterID].counter < spritesheet.count - 1) {
                 var counter = Math.ceil(_TweenSpriteCounters[counterID].counter);
 
-                domElement.style.backgroundPositionX = "-" + (spritesheet.offsetX + spritesheet.stepX*(counter%spritesheet._spritesInRow)) + spritesheet._stepXunits;
-                domElement.style.backgroundPositionY = "-" + (spritesheet.offsetY + spritesheet.stepY*Math.floor(counter/spritesheet._spritesInRow)) + spritesheet._stepYunits;
-            } 
-        }    
+                var background_position_x = "-" + (spritesheet.offsetX + spritesheet.stepX * (counter % spritesheet._spritesInRow)) + spritesheet._stepXunits;
+                var background_position_y = "-" + (spritesheet.offsetY + spritesheet.stepY * Math.floor(counter / spritesheet._spritesInRow)) + spritesheet._stepYunits;
+
+                domElement.style.backgroundPosition = background_position_x + " " + background_position_y;
+            }
+        }
     }
 
     params.counter = spritesheet.count;
